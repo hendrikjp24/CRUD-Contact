@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="card" style="width: 20rem">
+      <div class="card-body">
+        <h5 class="card-title"><%= detailContact.nama %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= detailContact.email %></h6>
+        <p class="card-text"><%= detailContact.nohp %></p>
+        <a href="/contact/edit/<%= detailContact._id %>" class="btn btn-primary badge">Edit</a>
+        <form action="/contact?_method=DELETE" method="post" class="d-inline">
+          <input type="hidden" name="id" value="<%= detailContact._id %>" />
+          <button type="submit" class="btn btn-danger badge" onclick="return confirm('Yakin Ingin Menghapus?')">Hapus</button>
+        </form>
+        <a href="/" class="card-link d-block mt-3">Back To List Contact</a>
+      </div>
+    </div>
+  </div>
+</div>

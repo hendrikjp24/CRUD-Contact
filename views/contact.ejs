@@ -1,0 +1,32 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>List Data Contact</h2>
+      <a href="/addContact" class="btn btn-primary mb-3 mt-1">Tambah Data</a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Email</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Contacts.forEach((contact, i) => { %>
+
+        <tr>
+          <th scope="row"><%= ++i %></th>
+          <td><%= contact.nama %></td>
+          <td><%= contact.email %></td>
+          <td>
+            <a href="/contact/<%= contact._id %>" class="btn btn-primary badge rounded-pill"><i class="bi bi-info-circle"></i> Detail</a>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
